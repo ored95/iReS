@@ -25,24 +25,26 @@ class Tree(object):
                     nComp += self.left.insert(newData)
         else:
             self.data = newData
+        
         return nComp
 
     def pop(self, lst):
         nComp = 0
         if self.left:
-            nComp += self.left.pop(lst)
+            nComp += 1 + self.left.pop(lst)
         lst.append(self.data),
         if self.right:
-            nComp += self.right.pop(lst)
+            nComp += 1 + self.right.pop(lst)
         return nComp
             
 def _doBinaryTreeSort(array: list):
-    nPers = 0
+    nPers = 2 * len(array)
     nComp = 0
     bTree = Tree(array[0])
     for i in range(1, len(array)):
-        nComp += bTree.insert(array[i])
-    
+        nComp += 1 + bTree.insert(array[i]) # for
+    nComp += 1      # end for
+
     array = []
     nComp += bTree.pop(array)
     return nPers, nComp, array

@@ -10,13 +10,15 @@ def _doMergeSort(array: list):
         right = _doMergeSort(rightPart)
 
         nPers += left[0] + right[0]
-        nComp += 1 + left[1] +right[1]
+        nComp += 1 + left[1] + right[1]     # if
         
         i = 0
         j = 0
         k = 0
+
+        nComp += 1      # while
         while i < len(leftPart):
-            nComp += 1
+            nComp += 1 + 1      # while + if-else
             if j < len(rightPart):
                 if leftPart[i] <= rightPart[j]:
                     array[k] = leftPart[i]
@@ -26,23 +28,25 @@ def _doMergeSort(array: list):
                     j += 1
                 k += 1
                 nPers += 1
-                nComp += 2
+                nComp += 1      # (sub)if-else
             else:
                 break
-
+        
+        nComp += 1      # while
         while i < len(leftPart):
             array[k] = leftPart[i]
             i += 1
             k += 1
             nPers += 1
-            nComp += 1
-            
+            nComp += 1  # while
+        
+        nComp += 1      # while
         while j < len(rightPart):
             array[k] = rightPart[j]
             j += 1
             k += 1
             nPers += 1
-            nComp += 1
+            nComp += 1  # while
 
     return nPers, nComp, array
 

@@ -35,3 +35,15 @@ class Sort:
             for i in range(len(times)):
                 self.logs += f"  - {key2value(i)}: \t{times[i][0]}(P)\t{times[i][1]}(C)\n"
         pass
+    
+    def to_report(self, array, genType, fileName="report.csv"):
+        results = []
+        # results.append(f"Array: {' '.join([str(x) for x in array])}\n")
+        results.append(f"ArrayLength: {len(array)} - ArrayType: {key2value(genType)}\n")
+        results.append(f"Type,Permutation,Comparison\n")
+        for i in range(len(self.nPers)):
+            results.append(f"{key2value(i)},{self.nPers[i]},{self.nComp[i]}\n")
+        results.append("\n")
+
+        with open(fileName, "a") as fs:
+            fs.writelines(results)

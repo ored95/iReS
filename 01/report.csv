@@ -1,0 +1,32 @@
+ArrayLength: 10 - ArrayType: Random
+Type,Permutation,Comparison
+Quick Sort,60,56
+Bubble Sort,69,64
+Insertion Sort,30,83
+Binary Tree Sort,20,76
+Merge Sort,34,128
+
+ArrayLength: 20 - ArrayType: Random
+Type,Permutation,Comparison
+Quick Sort,117,123
+Bubble Sort,306,229
+Insertion Sort,117,281
+Binary Tree Sort,40,231
+Merge Sort,88,298
+
+ArrayLength: 40 - ArrayType: Random
+Type,Permutation,Comparison
+Quick Sort,462,437
+Bubble Sort,1314,859
+Insertion Sort,476,1033
+Binary Tree Sort,80,655
+Merge Sort,216,738
+
+ArrayLength: 80 - ArrayType: Random
+Type,Permutation,Comparison
+Quick Sort,870,872
+Bubble Sort,4539,3319
+Insertion Sort,1586,3343
+Binary Tree Sort,160,1698
+Merge Sort,512,1676
+

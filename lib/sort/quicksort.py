@@ -6,11 +6,16 @@ def partition(array, left, right):
     nComp = 0
     
     for j in range(left, right):
-        if array[j] <= pivot:
+        if array[j] < pivot:
             i += 1          # increment index of smaller element
             array[i], array[j] = array[j], array[i]
             nPers += 3
-            nComp += 1
+            nComp += 1      # if
+        elif array[j] == pivot:
+            i += 1
+            nComp += 2      # elif
+        nComp += 1          # for
+    nComp += 1              # end for
 
     array[i+1], array[right] = array[right], array[i+1]
     return i + 1, nPers + 3, nComp
@@ -26,7 +31,7 @@ def _doQuickSort(array, left, right):
         right = _doQuickSort(array, pivotidx+1, right)
 
         nPers += left[0] + right[0]
-        nComp += 1 + cmp + left[1] + right[1]
+        nComp += 1 + cmp + left[1] + right[1]   # if
 
     return nPers, nComp, array
 
