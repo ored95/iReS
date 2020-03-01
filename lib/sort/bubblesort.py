@@ -6,12 +6,9 @@ def bubble(array: list):
 
     "Sorts array in place and returns it."
     for j in range(len(tmp)-1, 0, -1):
-        nComp += 1          # for
         for i in range(j):
-            nComp += 1      # (sub) for
+            nComp += 1
             if tmp[i] > tmp[i + 1]:
                 tmp[i], tmp[i + 1] = tmp[i + 1], tmp[i]
-                nPers += 3
-        nComp += 1          # (sub) end for
-    nComp += 1              # end for
+                nPers += 1
     return nPers, nComp, tmp
